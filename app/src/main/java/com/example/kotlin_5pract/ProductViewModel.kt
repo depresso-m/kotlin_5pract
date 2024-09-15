@@ -30,10 +30,11 @@ class ProductViewModel(private val repository: ProductRepository) : ViewModel() 
     }
 
     fun insertProduct(product: Product) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.insert(product)
         }
     }
+
 
     fun updateProduct(product: Product) {
         viewModelScope.launch {

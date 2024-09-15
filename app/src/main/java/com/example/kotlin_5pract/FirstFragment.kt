@@ -46,6 +46,7 @@ class FirstFragment : Fragment() {
         productViewModel.productById.observe(viewLifecycleOwner) { product ->
             if (product != null) {
                 binding.textView.text = product.title
+                productViewModel.insertProduct(product) //Вставляет в бд
             } else {
                 binding.textView.text = "Error: Product not found"
             }
