@@ -1,4 +1,4 @@
-package com.example.kotlin_5pract.model
+package com.example.kotlin_5pract.model.Product
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("kotlin-android")
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -35,7 +36,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 
@@ -45,16 +46,28 @@ android {
 
 dependencies {
 
+    //Hilt
+    kapt(libs.hilt.android.compiler)
+    implementation(libs.hilt.android.v2511)
 
+    //Dagger
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+
+    //Room
     implementation(libs.androidx.room.runtime)
     kapt(libs.androidx.room.compiler)
 
+    //Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+
+    //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
     implementation(libs.okhttp3.logging.interceptor)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

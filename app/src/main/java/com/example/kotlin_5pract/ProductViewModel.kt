@@ -2,14 +2,18 @@ package com.example.kotlin_5pract
 
 import androidx.lifecycle.*
 import com.example.kotlin_5pract.api.ProductApi
-import com.example.kotlin_5pract.model.Product
+import com.example.kotlin_5pract.model.Product.Product
+import com.example.kotlin_5pract.model.Product.ProductRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class ProductViewModel(private val repository: ProductRepository) : ViewModel() {
+@HiltViewModel
+class ProductViewModel @Inject constructor(private val repository: ProductRepository) : ViewModel() {
     val allProducts: LiveData<List<Product>> = repository.allProducts
 
     private val _productById = MutableLiveData<Product>()

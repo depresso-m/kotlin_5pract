@@ -6,13 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.kolin_5pract.ProductViewModelFactory
 import com.example.kotlin_5pract.databinding.FragmentFirstBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FirstFragment : Fragment() {
-    private lateinit var productViewModel: ProductViewModel
+
+    val productViewModel: ProductViewModel by viewModels()
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
 
@@ -31,8 +34,11 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
         }
 
-        val factory = ProductViewModelFactory(requireActivity().application)
-        productViewModel = ViewModelProvider(this, factory).get(ProductViewModel::class.java)
+
+        // При использовании Hilt + by ViewModels отпадает нужда в ViewModelFactory
+
+//        val factory = ProductViewModelFactory(requireActivity().application)
+//        productViewModel = ViewModelProvider(this, factory).get(ProductViewModel::class.java)
 
         binding.getDataBtn.setOnClickListener {
             if (binding.editTextId.text.toString() == "") {

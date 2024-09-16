@@ -1,6 +1,6 @@
 package com.example.kotlin_5pract.api
 
-import com.example.kotlin_5pract.model.Product
+import com.example.kotlin_5pract.model.Product.Product
 import retrofit2.http.GET
 import retrofit2.http.Path
 

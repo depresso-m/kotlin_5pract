@@ -1,20 +1,24 @@
 [versions]
 agp = "8.6.0"
+dagger = "2.52"
+hiltAndroid = "2.X"
+hiltAndroidCompiler = "2.52"
+hiltAndroidVersion = "2.52"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
-kotlinxCoroutinesCore = "1.7.3"
-loggingInterceptor = "4.9.1"
+kotlinxCoroutinesCore = "1.9.0"
+loggingInterceptor = "4.12.0"
 material = "1.12.0"
 activity = "1.9.2"
 constraintlayout = "2.1.4"
 navigationFragmentKtx = "2.8.0"
 navigationUiKtx = "2.8.0"
-okhttp = "4.9.1"
-retrofit = "2.9.0"
+okhttp = "4.12.0"
+retrofit = "2.11.0"
 roomCommon = "2.6.1"
 roomKtx = "2.6.1"
 
@@ -23,6 +27,11 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCommon" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCommon" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
+hilt-android-v2511 = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
